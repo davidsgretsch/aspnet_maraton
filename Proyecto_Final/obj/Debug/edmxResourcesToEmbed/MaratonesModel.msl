@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaratonesModelStoreContainer" CdmEntityContainer="MaratonesEntities">
+    <EntitySetMapping Name="Maratons">
+      <EntityTypeMapping TypeName="MaratonesModel.Maraton">
+        <MappingFragment StoreEntitySet="Maraton">
+          <ScalarProperty Name="IdMaraton" ColumnName="IdMaraton" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="MaxParticipantes" ColumnName="MaxParticipantes" />
+          <ScalarProperty Name="LugarSalida" ColumnName="LugarSalida" />
+          <ScalarProperty Name="ParticipantesEnEspera" ColumnName="ParticipantesEnEspera" />
+          <ScalarProperty Name="PrimerPremio" ColumnName="PrimerPremio" />
+          <ScalarProperty Name="SegundoPremio" ColumnName="SegundoPremio" />
+          <ScalarProperty Name="TercerPremio" ColumnName="TercerPremio" />
+          <ScalarProperty Name="FechaHorarioComienzo" ColumnName="FechaHorarioComienzo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultadoMaratonParticipantes">
+      <EntityTypeMapping TypeName="MaratonesModel.ResultadoMaratonParticipante">
+        <MappingFragment StoreEntitySet="ResultadoMaratonParticipante">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdMaraton" ColumnName="IdMaraton" />
+          <ScalarProperty Name="NroInscripcion" ColumnName="NroInscripcion" />
+          <ScalarProperty Name="PosicionFinal" ColumnName="PosicionFinal" />
+          <ScalarProperty Name="TiempoLlegada" ColumnName="TiempoLlegada" />
+          <ScalarProperty Name="Finalizo" ColumnName="Finalizo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="MaratonesModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+          <ScalarProperty Name="LugarResidencia" ColumnName="LugarResidencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

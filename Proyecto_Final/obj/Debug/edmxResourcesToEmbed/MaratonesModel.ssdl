@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaratonesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MaratonesModelStoreContainer">
+    <EntitySet Name="Maraton" EntityType="MaratonesModel.Store.Maraton" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ResultadoMaratonParticipante" EntityType="MaratonesModel.Store.ResultadoMaratonParticipante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="MaratonesModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ResultadoMaratonParticipante_Maraton" Association="MaratonesModel.Store.FK_ResultadoMaratonParticipante_Maraton">
+      <End Role="Maraton" EntitySet="Maraton" />
+      <End Role="ResultadoMaratonParticipante" EntitySet="ResultadoMaratonParticipante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResultadoMaratonParticipante_Usuario" Association="MaratonesModel.Store.FK_ResultadoMaratonParticipante_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ResultadoMaratonParticipante" EntitySet="ResultadoMaratonParticipante" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Maraton">
+    <Key>
+      <PropertyRef Name="IdMaraton" />
+    </Key>
+    <Property Name="IdMaraton" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="MaxParticipantes" Type="int" Nullable="false" />
+    <Property Name="LugarSalida" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ParticipantesEnEspera" Type="int" Nullable="false" />
+    <Property Name="PrimerPremio" Type="int" Nullable="false" />
+    <Property Name="SegundoPremio" Type="int" Nullable="false" />
+    <Property Name="TercerPremio" Type="int" Nullable="false" />
+    <Property Name="FechaHorarioComienzo" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResultadoMaratonParticipante">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="IdMaraton" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdMaraton" Type="int" Nullable="false" />
+    <Property Name="NroInscripcion" Type="int" Nullable="false" />
+    <Property Name="PosicionFinal" Type="int" />
+    <Property Name="TiempoLlegada" Type="int" />
+    <Property Name="Finalizo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Contrasenia" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Admin" Type="bit" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="FechaNac" Type="datetime" Nullable="false" />
+    <Property Name="LugarResidencia" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_ResultadoMaratonParticipante_Maraton">
+    <End Role="Maraton" Type="MaratonesModel.Store.Maraton" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ResultadoMaratonParticipante" Type="MaratonesModel.Store.ResultadoMaratonParticipante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maraton">
+        <PropertyRef Name="IdMaraton" />
+      </Principal>
+      <Dependent Role="ResultadoMaratonParticipante">
+        <PropertyRef Name="IdMaraton" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResultadoMaratonParticipante_Usuario">
+    <End Role="Usuario" Type="MaratonesModel.Store.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ResultadoMaratonParticipante" Type="MaratonesModel.Store.ResultadoMaratonParticipante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="ResultadoMaratonParticipante">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
