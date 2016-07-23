@@ -1,0 +1,87 @@
+﻿html, body { height: 100%;}
+.carousel, .item, .active { height: 100%;}
+.carousel-inner { height: 100%;}
+.imagen-slider1 { width: 100%; height: 100%; background: url(../img/marathon1.jpg); background-position: center; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover;}
+.imagen-slider2 { width: 100%; height: 100%; background: url(../img/marathon2.jpg); background-position: center; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover;}
+.imagen-slider3 { width: 100%; height: 100%; background: url(../img/marathon3.jpg); background-position: center; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover;}
+/*img: 1900x1080*/
+footer { margin: 50px 0;}
+
+/* Color navbar */
+.navbar-default { background-color: #ff8000; border-color: #ffa900;}
+.navbar-default .navbar-brand { color: #ffffff;}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus { color: #ecdbff;}
+.navbar-default .navbar-text { color: #ffffff;}
+.navbar-default .navbar-nav > li > a { color: #ffffff;}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus { color: #ecdbff;}
+.navbar-default .navbar-nav > li > .dropdown-menu { background-color: #ff8000;}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a { color: #ffffff;}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus { color: #ecdbff; background-color: #ffa900;}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider { background-color: #ff8000;}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: #ecdbff; background-color: #ffa900;}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus { color: #ecdbff; background-color: #ffa900;}
+.navbar-default .navbar-toggle { border-color: #ffa900;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus { background-color: #ffa900;}
+.navbar-default .navbar-toggle .icon-bar { background-color: #ffffff;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color: #ffffff;}
+.navbar-default .navbar-link { color: #ffffff;}
+.navbar-default .navbar-link:hover { color: #ecdbff;}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #ffffff;}
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus { color: #ecdbff;}
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus { color: #ecdbff; background-color: #ffa900;}
+}
+
+/* Inicio sesion */
+.inicio-sesion { background-color: #F2F2F2; padding-bottom: 25px;}
+.name-sesion { color: #FFFFFF; }
+.glyphicon-remove { 
+  -moz-transition-duration: 0.8s;
+  -moz-transition-property: -moz-transform;
+  -o-transition-duration: 0.8s;
+  -o-transition-property: -o-transform;
+  -webkit-transition-duration: 0.8s;
+  -webkit-transition-property: -webkit-transform;
+  color: #ffffff; 
+  overflow:hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+  }
+.glyphicon-remove:hover {
+  -moz-transform:rotate(360deg);
+  -o-transform:rotate(360deg);
+  -webkit-transform:rotate(360deg);
+  color: #ffffff;
+}
+/* Contenido */
+#masterpages { padding-top: 50px;}
+.mycontenido-usu { background-color: beige;} /*f2f2f2*/
+.mycontenido-login { background-color:aliceblue;}
+.mycontenido-admin { background-color:mistyrose;}
+#wrap { min-height: 100%; height: auto !important; height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px; background-color: #F2F2F2;}
+#footer {
+  height: auto;
+  background-color: #ffffff;
+}
+#wrap > .container { padding: 0 15px 0;}
+#footer > .container { padding-left: 15px; padding-right: 15px;}
+
+/***Form**/
+.botonLogin { top: 50%; }
+.ddList{ color: black; font-size: 15px; width: 50%;}
+.errorForm { position: absolute; text-align: center; left: 538px; 
+color: #F43636;
+    top: 79px;
+    width: 199px;
+    height: 18px;
+}
+
+.jumbotronLogin { width: 70%; margin-left: 10%;}
+
+.colortabla { background-color: #fff;}
